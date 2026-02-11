@@ -20,6 +20,7 @@ function App() {
   const [guestCode, setGuestCode] = useState('');
   const [loading, setLoading] = useState(true);
   const [submitted, setSubmitted] = useState(false);
+  const [invalidCode, setInvalidCode] = useState(false);
   const [formData, setFormData] = useState({
     // Atlanta Reception
     atlantaAttending: '',
@@ -63,9 +64,14 @@ function App() {
       
       if (docSnap.exists()) {
         setFormData(docSnap.data());
+        setInvalidCode(false);
+      } else {
+        // Code doesn't exist in database
+        setInvalidCode(true);
       }
     } catch (error) {
       console.error('Error loading guest data:', error);
+      setInvalidCode(true);
     } finally {
       setLoading(false);
     }
@@ -116,6 +122,15 @@ function App() {
       <div className="container error">
         <h1>Invalid Invitation Link</h1>
         <p>Please use the personalized link provided in your wedding invitation.</p>
+      </div>
+    );
+  }
+
+  if (invalidCode) {
+    return (
+      <div className="container error">
+        <h1>Invalid Invitation Code</h1>
+        <p>The invitation code in your link is not valid. Please check your link and try again, or contact the grooms if you believe this is an error.</p>
       </div>
     );
   }
