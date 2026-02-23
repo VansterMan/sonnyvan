@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs, doc, updateDoc } from 'firebase/firestore';
+import { getFirestore, collection, getDocs, doc, updateDoc, deleteDoc } from 'firebase/firestore';
 import './Admin.css';
 
 // Your web app's Firebase configuration
@@ -24,6 +24,8 @@ function Admin() {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [rsvps, setRsvps] = useState([]);
+  const [sortField, setSortField] = useState('id');
+  const [sortDirection, setSortDirection] = useState('asc');
   const [stats, setStats] = useState({
     atlanta: { yes: 0, maybe: 0, no: 0, null: 0 },
     dc: { yes: 0, maybe: 0, no: 0, null: 0 }
@@ -110,6 +112,47 @@ function Admin() {
     } catch (error) {
       console.error('Error saving invite:', error);
       alert('Error saving invitation. Please try again.');
+    }
+  };
+
+  const handleSort = (field) => {
+    if (sortField === field) {
+      // Toggle direction if clicking same field
+      setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
+    } else {
+      // New field, default to ascending
+      setSortField(field);
+      setSortDirection('asc');
+    }
+  };
+
+  const handleDelete = async (rsvp) => {
+    // Check if RSVP has any response data
+    const hasResponseData = 
+      rsvp.atlantaAttending || 
+      rsvp.dcAttending || 
+      rsvp.atlantaGuest1Name || 
+      rsvp.dcGuest1Name ||
+      rsvp.additionalComments;
+
+    let confirmMessage;
+    if (hasResponseData) {
+      confirmMessage = `WARNING: This guest has already submitted RSVP data.\n\nCode: ${rsvp.id}\nAtlanta: ${rsvp.atlantaAttending || 'No response'}\nDC: ${rsvp.dcAttending || 'No response'}\n\nAre you SURE you want to permanently delete this invitation and all associated data?`;
+    } else {
+      confirmMessage = `Delete invitation code "${rsvp.id}"?\n\nThis will permanently remove this code from the database.`;
+    }
+
+    if (!window.confirm(confirmMessage)) {
+      return;
+    }
+
+    try {
+      await deleteDoc(doc(db, 'rsvps', rsvp.id));
+      alert(`Invitation "${rsvp.id}" has been deleted.`);
+      loadRsvps(); // Reload data
+    } catch (error) {
+      console.error('Error deleting invitation:', error);
+      alert('Error deleting invitation. Please try again.');
     }
   };
 
@@ -201,6 +244,20 @@ function Admin() {
 
   const invitedRsvps = rsvps.filter(r => r.invited);
 
+  // Sort the invited RSVPs based on current sort settings
+  const sortedRsvps = [...invitedRsvps].sort((a, b) => {
+    let aVal = a[sortField] || '';
+    let bVal = b[sortField] || '';
+    
+    // Convert to lowercase for case-insensitive sorting
+    if (typeof aVal === 'string') aVal = aVal.toLowerCase();
+    if (typeof bVal === 'string') bVal = bVal.toLowerCase();
+    
+    if (aVal < bVal) return sortDirection === 'asc' ? -1 : 1;
+    if (aVal > bVal) return sortDirection === 'asc' ? 1 : -1;
+    return 0;
+  });
+
   return (
     <div className="admin-container">
       <header className="admin-header">
@@ -271,14 +328,23 @@ function Admin() {
           <table className="rsvp-table">
             <thead>
               <tr>
-                <th>Invite Code</th>
-                <th>Internal Comments</th>
-                <th>Atlanta</th>
-                <th>DC</th>
+                <th onClick={() => handleSort('id')} className="sortable">
+                  Invite Code {sortField === 'id' && (sortDirection === 'asc' ? '▲' : '▼')}
+                </th>
+                <th onClick={() => handleSort('internalComments')} className="sortable">
+                  Internal Comments {sortField === 'internalComments' && (sortDirection === 'asc' ? '▲' : '▼')}
+                </th>
+                <th onClick={() => handleSort('atlantaAttending')} className="sortable">
+                  Atlanta {sortField === 'atlantaAttending' && (sortDirection === 'asc' ? '▲' : '▼')}
+                </th>
+                <th onClick={() => handleSort('dcAttending')} className="sortable">
+                  DC {sortField === 'dcAttending' && (sortDirection === 'asc' ? '▲' : '▼')}
+                </th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
-              {invitedRsvps.map(rsvp => (
+              {sortedRsvps.map(rsvp => (
                 <tr key={rsvp.id}>
                   <td>
                     <a 
@@ -296,6 +362,15 @@ function Admin() {
                   </td>
                   <td className={`status-cell ${rsvp.dcAttending || 'null'}`}>
                     {rsvp.dcAttending || 'No response'}
+                  </td>
+                  <td>
+                    <button 
+                      onClick={() => handleDelete(rsvp)}
+                      className="btn-delete"
+                      title="Delete this invitation"
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
               ))}

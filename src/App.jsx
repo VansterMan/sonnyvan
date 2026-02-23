@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
+import LandingPage from './LandingPage';
 import './App.css';
 
 // Your web app's Firebase configuration
@@ -118,19 +119,14 @@ function App() {
   }
 
   if (!guestCode) {
-    return (
-      <div className="container error">
-        <h1>Invalid Invitation Link</h1>
-        <p>Please use the personalized link provided in your wedding invitation.</p>
-      </div>
-    );
+    return <LandingPage />;
   }
 
   if (invalidCode) {
     return (
       <div className="container error">
         <h1>Invalid Invitation Code</h1>
-        <p>The invitation code in your link is not valid. Please check your link and try again, or contact the grooms if you believe this is an error.</p>
+        <p>The invitation code in your link is not valid. Please check your link and try again, or contact your preferred groom if you believe this is an error.</p>
       </div>
     );
   }
@@ -139,11 +135,16 @@ function App() {
     return (
       <div className="container confirmation">
         <div className="confirmation-box">
-          <h1>✓ Response Recorded!</h1>
+          <h1>✓ We got your response!!</h1>
           <p className="confirmation-message">
-            Thank you, we have recorded your response! Use the URL provided to make any updates if needed. 
-            You will not get an automated email confirmation but the grooms will contact you separately with 
-            additional details later.
+            RSVP received!
+          </p>
+          <p className="confirmation-message">
+            <b>You will not receive an automatic confirmation email</b>, but the grooms will contact
+            contact you separately with additional details as needed.
+          </p>
+          <p className="confirmation-message">
+            Use your private URL to make any updates if needed.
           </p>
           <button onClick={() => setSubmitted(false)} className="btn-secondary">
             Edit Your Response
