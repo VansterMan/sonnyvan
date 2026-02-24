@@ -1,37 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import ImageCarousel from './ImageCarousel';
 import './LandingPage.css';
 
 function LandingPage() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const images = [
-    '/carousel-1.jpg',
-    '/carousel-2.jpg',
-    '/carousel-3.jpg',
-    '/carousel-4.jpg',
-    '/carousel-5.jpg',
-    '/carousel-6.jpg'
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % images.length);
-    }, 5000); // Auto-advance every 5 seconds
-
-    return () => clearInterval(timer);
-  }, [images.length]);
-
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
-
-  const goToPrevious = () => {
-    setCurrentSlide((prev) => (prev - 1 + images.length) % images.length);
-  };
-
-  const goToNext = () => {
-    setCurrentSlide((prev) => (prev + 1) % images.length);
-  };
-
   return (
     <div className="landing-container">
       <div className="landing-content">
@@ -41,36 +12,7 @@ function LandingPage() {
         </p>
 
         {/* Image Carousel */}
-        <div className="carousel">
-          <button className="carousel-arrow carousel-arrow-left" onClick={goToPrevious}>
-            ‹
-          </button>
-          
-          <div className="carousel-images">
-            {images.map((image, index) => (
-              <img
-                key={index}
-                src={image}
-                alt={`Sonny and Van ${index + 1}`}
-                className={`carousel-image ${index === currentSlide ? 'active' : ''}`}
-              />
-            ))}
-          </div>
-
-          <button className="carousel-arrow carousel-arrow-right" onClick={goToNext}>
-            ›
-          </button>
-
-          <div className="carousel-dots">
-            {images.map((_, index) => (
-              <button
-                key={index}
-                className={`carousel-dot ${index === currentSlide ? 'active' : ''}`}
-                onClick={() => goToSlide(index)}
-              />
-            ))}
-          </div>
-        </div>
+        <ImageCarousel />
 
         <h1 className="landing-title">So we did a thing...</h1>
         <p className="landing-text">
@@ -83,7 +25,7 @@ function LandingPage() {
 
         <h1 className="landing-title">Our Story</h1>
         <p className="landing-text">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+          Coming soon!
         </p>
 
         <h1 className="landing-title">Join Us</h1>

@@ -65,10 +65,29 @@ function Admin() {
 
         // Calculate stats for invited guests only
         if (rsvp.invited) {
+          // Count actual people, not just invitations
           const atlantaStatus = rsvp.atlantaAttending || 'null';
           const dcStatus = rsvp.dcAttending || 'null';
-          newStats.atlanta[atlantaStatus]++;
-          newStats.dc[dcStatus]++;
+          
+          // For Atlanta
+          if (atlantaStatus === 'yes' || atlantaStatus === 'maybe') {
+            let atlantaPeopleCount = 0;
+            if (rsvp.atlantaGuest1Name) atlantaPeopleCount++;
+            if (rsvp.atlantaGuest2Name) atlantaPeopleCount++;
+            newStats.atlanta[atlantaStatus] += atlantaPeopleCount;
+          } else {
+            newStats.atlanta[atlantaStatus]++;
+          }
+          
+          // For DC
+          if (dcStatus === 'yes' || dcStatus === 'maybe') {
+            let dcPeopleCount = 0;
+            if (rsvp.dcGuest1Name) dcPeopleCount++;
+            if (rsvp.dcGuest2Name) dcPeopleCount++;
+            newStats.dc[dcStatus] += dcPeopleCount;
+          } else {
+            newStats.dc[dcStatus]++;
+          }
         }
       });
 

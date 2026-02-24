@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 import LandingPage from './LandingPage';
+import ImageCarousel from './ImageCarousel';
 import './App.css';
 
 // Your web app's Firebase configuration
@@ -159,7 +160,7 @@ function App() {
       <header className="header">
         <h1 className="title">Sonny & Van's Wedding Reception</h1>
         <p className="subtitle">Join us for a fun celebration</p>
-        <img src="/wedding-sign.jpg" alt="Wedding" className="header-image" />
+        <ImageCarousel />
       </header>
 
       <div className="intro-text">
