@@ -166,7 +166,10 @@ function App() {
       <div className="intro-text">
         <p>
           We are having two wedding receptions in two cities (Atlanta and DC) and would love 
-          for you to join us at one (or both)!
+          for you to join us at one (or both)! And, don't forget to check out <a href="/" target="_blank">our story</a>.
+        <p>
+          &nbsp;
+        </p>
         </p>
 	  Please RSVP for either/both receptions below.
 	<p>
