@@ -170,6 +170,12 @@ function App() {
         <p>
           &nbsp;
         </p>
+        <p>
+          <b>Important:</b> You can use your custom URL to update your response at any time, so please feel free to just respond with what you know now. Please do not share the URL with others.
+        </p>
+        <p>
+          &nbsp;
+        </p>
         </p>
 	  Please RSVP for either/both receptions below.
 	<p>
