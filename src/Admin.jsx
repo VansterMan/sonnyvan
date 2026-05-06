@@ -26,6 +26,8 @@ function Admin() {
   const [rsvps, setRsvps] = useState([]);
   const [sortField, setSortField] = useState('id');
   const [sortDirection, setSortDirection] = useState('asc');
+  const [editingComment, setEditingComment] = useState(null);
+  const [editCommentValue, setEditCommentValue] = useState('');
   const [stats, setStats] = useState({
     atlanta: { yes: 0, maybe: 0, no: 0, null: 0 },
     dc: { yes: 0, maybe: 0, no: 0, null: 0 }
@@ -173,6 +175,32 @@ function Admin() {
       console.error('Error deleting invitation:', error);
       alert('Error deleting invitation. Please try again.');
     }
+  };
+
+  const handleEditComment = (rsvp) => {
+    setEditingComment(rsvp.id);
+    setEditCommentValue(rsvp.internalComments || '');
+  };
+
+  const handleSaveComment = async (rsvpId) => {
+    try {
+      const docRef = doc(db, 'rsvps', rsvpId);
+      await updateDoc(docRef, {
+        internalComments: editCommentValue || null
+      });
+      
+      setEditingComment(null);
+      setEditCommentValue('');
+      loadRsvps(); // Reload data
+    } catch (error) {
+      console.error('Error updating comment:', error);
+      alert('Error saving comment. Please try again.');
+    }
+  };
+
+  const handleCancelEdit = () => {
+    setEditingComment(null);
+    setEditCommentValue('');
   };
 
   const handleExportCSV = () => {
@@ -375,7 +403,47 @@ function Admin() {
                       {rsvp.id}
                     </a>
                   </td>
-                  <td className="comments-cell">{rsvp.internalComments || '-'}</td>
+                  <td className="comments-cell">
+                    {editingComment === rsvp.id ? (
+                      <div className="inline-edit">
+                        <input
+                          type="text"
+                          value={editCommentValue}
+                          onChange={(e) => setEditCommentValue(e.target.value)}
+                          className="inline-edit-input"
+                          autoFocus
+                          onKeyDown={(e) => {
+                            if (e.key === 'Enter') handleSaveComment(rsvp.id);
+                            if (e.key === 'Escape') handleCancelEdit();
+                          }}
+                        />
+                        <div className="inline-edit-buttons">
+                          <button 
+                            onClick={() => handleSaveComment(rsvp.id)}
+                            className="btn-save"
+                            title="Save"
+                          >
+                            ✓
+                          </button>
+                          <button 
+                            onClick={handleCancelEdit}
+                            className="btn-cancel"
+                            title="Cancel"
+                          >
+                            ✕
+                          </button>
+                        </div>
+                      </div>
+                    ) : (
+                      <span 
+                        onClick={() => handleEditComment(rsvp)}
+                        className="editable-comment"
+                        title="Click to edit"
+                      >
+                        {rsvp.internalComments || '-'}
+                      </span>
+                    )}
+                  </td>
                   <td className={`status-cell ${rsvp.atlantaAttending || 'null'}`}>
                     {rsvp.atlantaAttending || 'No response'}
                   </td>

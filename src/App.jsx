@@ -187,9 +187,8 @@ function App() {
         <section className="reception-section">
           <h2 className="reception-title">Atlanta Reception</h2>
           <p className="reception-details">
-            <strong>Location:</strong> Atlanta, GA (within the perimeter)<br />
-            <strong>Date & Time:</strong> Sunday, June 7th, 2026, late afternoon / early evening<br />
-            <em>Specific location and start/end times TBA soon, and you'll get an email.</em>
+            <strong>Location:</strong> <a href="https://www.buddybuddyatl.com">Buddy Buddy</a> in Midtown (<a href="https://maps.app.goo.gl/u4EpmSgEgsNvuDZv6">map</a>)<br />
+            <strong>Date & Time:</strong> Sunday, June 7th, 2026, 3:00-7:00pm, come as your schedule allows; brief remarks at 5ish<br />
           </p>
 
           <div className="form-group">
