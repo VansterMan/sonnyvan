@@ -368,7 +368,7 @@ function App() {
         <section className="reception-section">
           <h2 className="reception-title">Additional Information</h2>
           <p>
-            <b>Format:</b> This is an informal celebration with our friends. At both receptions we’ll have an open bar with heavy hors' d'oeuvres. There are no formal announcements or ceremonies planned.
+            <b>Format:</b> This is an informal celebration with our friends. At both receptions we’ll have an open bar with heavy hors' d'oeuvres. Come as your schedule allows. There will be brief remarks, but no formal ceremony.
           </p>
           <p>
             <b>Dress:</b> Cocktail attire
