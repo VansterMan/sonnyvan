@@ -186,91 +186,30 @@ function App() {
         {/* Atlanta Reception */}
         <section className="reception-section">
           <h2 className="reception-title">Atlanta Reception</h2>
-          <p className="reception-details">
-            <strong>Location:</strong> <a href="https://www.buddybuddyatl.com">Buddy Buddy</a> in Midtown (<a href="https://maps.app.goo.gl/u4EpmSgEgsNvuDZv6">map</a>)<br />
-            <strong>Date & Time:</strong> Sunday, June 7th, 2026, 3:00-7:00pm, come as your schedule allows; brief remarks at 5ish<br />
-          </p>
-
-          <div className="form-group">
-            <label>Will you be attending the Atlanta reception? *</label>
-            <select 
-              name="atlantaAttending" 
-              value={formData.atlantaAttending}
-              onChange={handleChange}
-              required
-            >
-              <option value="">Please select</option>
-              <option value="yes">Yes, I/we will attend</option>
-              <option value="maybe">Maybe</option>
-              <option value="no">No, I/we cannot attend</option>
-            </select>
+          
+          <div className="locked-message">
+            <p>
+              <strong>The Atlanta guest list has been locked down for catering and space reservations!</strong>
+            </p>
+            <p>
+              Your current response is: <strong className={`status-inline ${formData.atlantaAttending || 'null'}`}>
+                {formData.atlantaAttending ? 
+                  (formData.atlantaAttending === 'yes' ? 'Yes, I/we will attend' :
+                   formData.atlantaAttending === 'maybe' ? 'Maybe' :
+                   'No, I/we cannot attend') : 
+                  'No response yet'}
+              </strong>
+            </p>
           </div>
 
-          {(formData.atlantaAttending === 'yes' || formData.atlantaAttending === 'maybe') && (
-            <>
-              <h3 className="guest-subtitle">Guest 1 Information</h3>
-              <div className="form-group">
-                <label>Full Name *</label>
-                <input
-                  type="text"
-                  name="atlantaGuest1Name"
-                  value={formData.atlantaGuest1Name}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label>Email Address *</label>
-                <input
-                  type="email"
-                  name="atlantaGuest1Email"
-                  value={formData.atlantaGuest1Email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label>Dietary Restrictions or Allergies</label>
-                <textarea
-                  name="atlantaGuest1DietaryRestrictions"
-                  value={formData.atlantaGuest1DietaryRestrictions}
-                  onChange={handleChange}
-                  rows="2"
-                  placeholder="Please let us know of any dietary restrictions or allergies"
-                />
-              </div>
+          <p className="reception-details">
+            <strong>Location:</strong> <a href="https://www.buddybuddyatl.com" target="_blank" rel="noopener noreferrer">Buddy Buddy</a> in Midtown (<a href="https://maps.app.goo.gl/u4EpmSgEgsNvuDZv6" target="_blank" rel="noopener noreferrer">map</a>)<br />
+            <strong>Date & Time:</strong> Sunday, June 7th, 2026, 3:00-7:00pm, come as your schedule allows; brief remarks at 5ish
+          </p>
 
-              <h3 className="guest-subtitle">Guest 2 Information (Optional)</h3>
-              <div className="form-group">
-                <label>Full Name</label>
-                <input
-                  type="text"
-                  name="atlantaGuest2Name"
-                  value={formData.atlantaGuest2Name}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="form-group">
-                <label>Email Address</label>
-                <input
-                  type="email"
-                  name="atlantaGuest2Email"
-                  value={formData.atlantaGuest2Email}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="form-group">
-                <label>Dietary Restrictions or Allergies</label>
-                <textarea
-                  name="atlantaGuest2DietaryRestrictions"
-                  value={formData.atlantaGuest2DietaryRestrictions}
-                  onChange={handleChange}
-                  rows="2"
-                  placeholder="Please let us know of any dietary restrictions or allergies"
-                />
-              </div>
-            </>
-          )}
+          <p className="locked-note">
+            If you need to change your Atlanta response please contact your preferred groom.
+          </p>
         </section>
 
         {/* DC Reception */}
@@ -368,7 +307,7 @@ function App() {
         <section className="reception-section">
           <h2 className="reception-title">Additional Information</h2>
           <p>
-            <b>Format:</b> This is an informal celebration with our friends. At both receptions we’ll have an open bar with heavy hors' d'oeuvres. Come as your schedule allows. There will be brief remarks, but no formal ceremony.
+            <b>Format:</b> This is an informal celebration with our friends. At both receptions we’ll have an open bar with heavy hors' d'oeuvres. There are no formal announcements or ceremonies planned.
           </p>
           <p>
             <b>Dress:</b> Cocktail attire
