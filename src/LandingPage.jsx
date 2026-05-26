@@ -40,7 +40,7 @@ function LandingPage() {
           As these things go, one year became two, and in April of 2024, they bought a condo a few blocks away, surrounded by a growing community of friends and colleagues. 
         </p>
         <p className="landing-text">
-          In the face of an uncertain future for marriage equality, they wanted to take matters into their own hands. On a quiet night in December 2025, Van proposed, and Sonny said yes. Three months later, they eloped in the same city their relationship started, in the Los Angeles County Courthouse.
+          In the face of an uncertain future for marriage equality, they wanted to take matters into their own hands. On a quiet night in December 2024, Van proposed, and Sonny said yes. Three months later, they eloped in the same city their relationship started, in the Los Angeles County Courthouse.
         </p>
         <h1 className="landing-title">Join Us</h1>
         <p className="landing-text">
