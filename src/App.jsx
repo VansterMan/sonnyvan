@@ -166,7 +166,7 @@ function App() {
       <div className="intro-text">
         <p>
           We are having two wedding receptions in two cities (Atlanta and DC) and would love 
-          for you to join us at one (or both)! And, don't forget to check out <a href="/" target="_blank">our story</a>.
+          for you to join. Atlanta is done but there's still time to celebrate in DC! And, don't forget to check out <a href="/" target="_blank">our story</a>.
         <p>
           &nbsp;
         </p>
@@ -176,49 +176,19 @@ function App() {
         <p>
           &nbsp;
         </p>
-        </p>
-	  Please RSVP for either/both receptions below.
-	<p>
 	</p>
       </div>
 
       <form onSubmit={handleSubmit} className="rsvp-form">
-        {/* Atlanta Reception */}
-        <section className="reception-section">
-          <h2 className="reception-title">Atlanta Reception</h2>
-          
-          <div className="locked-message">
-            <p>
-              <strong>The Atlanta guest list has been locked down for catering and space reservations!</strong>
-            </p>
-            <p>
-              Your current response is: <strong className={`status-inline ${formData.atlantaAttending || 'null'}`}>
-                {formData.atlantaAttending ? 
-                  (formData.atlantaAttending === 'yes' ? 'Yes, I/we will attend' :
-                   formData.atlantaAttending === 'maybe' ? 'Maybe' :
-                   'No, I/we cannot attend') : 
-                  'No response yet'}
-              </strong>
-            </p>
-          </div>
 
-          <p className="reception-details">
-            <strong>Location:</strong> <a href="https://www.buddybuddyatl.com" target="_blank" rel="noopener noreferrer">Buddy Buddy</a> in Midtown (<a href="https://maps.app.goo.gl/u4EpmSgEgsNvuDZv6" target="_blank" rel="noopener noreferrer">map</a>)<br />
-            <strong>Date & Time:</strong> Sunday, June 7th, 2026, 3:00-7:00pm, come as your schedule allows; brief remarks at 5ish
-          </p>
-
-          <p className="locked-note">
-            If you need to change your Atlanta response please contact your preferred groom.
-          </p>
-        </section>
 
         {/* DC Reception */}
         <section className="reception-section">
           <h2 className="reception-title">Washington, DC Reception</h2>
           <p className="reception-details">
-            <strong>Location:</strong> DC, NW quadrant<br />
-            <strong>Date & Time:</strong> Sunday, August 2nd, 2026, late afternoon / early evening<br />
-            <em>Specific location and start/end times TBA soon, and you'll get an email.</em>
+            <strong>Location:</strong> <a href="https://www.thedarcyhotel.com/">The Darcy</a> hotel at <a href="https://maps.app.goo.gl/e98gqW2JrHsY6ZC96">1515 Rhode Island Ave NW</a>, right on Scott Circle<br />
+            <strong>Date & Time:</strong> Sunday, August 2nd, 2026, 3:00-7:00 pm, with brief remarks around 5ish; we hope you can stay the whole time but feel free to come and go as your schedule allows<br />
+            <strong>Rooms:</strong> traveling from out of town (or just want to treat yourself and make it a fun evening)? The Darcy has generously extended a <a href="https://reservations.thedarcyhotel.com/?chain=13057&hotel=6338&Rate=D1">discounted booking link</a> for our party.
           </p>
 
           <div className="form-group">
@@ -302,12 +272,27 @@ function App() {
             </>
           )}
         </section>
+        {/* Atlanta Reception */}
+        <section className="reception-section">
+          <h2 className="reception-title">Atlanta Reception</h2>
+          
+          <div className="locked-message">
+            <p>
+              <strong>Atlanta on June 7th was a raging success! Look for pictures soon.</strong>
+            </p>
+          </div>
 
+          <p className="reception-details">
+            <strong>Location:</strong> <a href="https://www.buddybuddyatl.com" target="_blank" rel="noopener noreferrer">Buddy Buddy</a> in Midtown (<a href="https://maps.app.goo.gl/u4EpmSgEgsNvuDZv6" target="_blank" rel="noopener noreferrer">map</a>)<br />
+            <strong>Date & Time:</strong> Sunday, June 7th, 2026, 3:00-7:00pm
+          </p>
+
+        </section>
         {/* Additional Information */}
         <section className="reception-section">
           <h2 className="reception-title">Additional Information</h2>
           <p>
-            <b>Format:</b> This is an informal celebration with our friends. At both receptions we’ll have an open bar with heavy hors' d'oeuvres. There are no formal announcements or ceremonies planned.
+            <b>Format:</b> This is an informal celebration with our friends. At both receptions we’ll have an open bar with heavy hors' d'oeuvres.
           </p>
           <p>
             <b>Dress:</b> Cocktail attire
@@ -321,9 +306,6 @@ function App() {
             &nbsp;<a href="https://www.thetrevorproject.org/be-the-one/">The Trevor Project</a><br />
             &nbsp;<a href="https://donate.wikimedia.org/">Wikimedia Foundation</a>
           </p>
-          </p>
-          <p>
-            We’ll provide additional venue-specific details (address, parking, pet policy, etc.) closer to the time for those who accepted.
           </p>
 
           <div className="form-group">
