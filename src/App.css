@@ -10,7 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  background: linear-gradient(135deg, #f2e8f0 0%, #e6d4e0 100%);
   min-height: 100vh;
   padding: 20px;
 }
@@ -20,7 +20,7 @@ body {
   margin: 0 auto;
   background: white;
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(46, 125, 50, 0.15);
+  box-shadow: 0 8px 32px rgba(102, 2, 60, 0.15);
   padding: 40px;
   animation: fadeIn 0.5s ease-in;
 }
@@ -40,29 +40,29 @@ body {
   text-align: center;
   margin-bottom: 30px;
   padding-bottom: 20px;
-  border-bottom: 3px solid #4caf50;
+  border-bottom: 3px solid #66023C;
 }
 
 .title {
   font-size: 2.5rem;
-  color: #2e7d32;
+  color: #66023C;
   margin-bottom: 10px;
   font-weight: 700;
 }
 
 .subtitle {
   font-size: 1.2rem;
-  color: #66bb6a;
+  color: #a60c5e;
   font-weight: 400;
   margin-bottom: 20px;
 }
 
 .intro-text {
-  background: #f1f8f4;
+  background: #f2e8f0;
   padding: 20px;
   border-radius: 12px;
   margin-bottom: 30px;
-  border-left: 4px solid #4caf50;
+  border-left: 4px solid #66023C;
 }
 
 .intro-text p {
@@ -76,7 +76,7 @@ body {
   padding: 25px;
   background: #fafafa;
   border-radius: 12px;
-  border: 2px solid #e8f5e9;
+  border: 2px solid #f2e8f0;
 }
 
 .reception-section p {
@@ -89,13 +89,13 @@ body {
 }
 
 .reception-section a {
-  color: #2e7d32;
+  color: #66023C;
   text-decoration: none;
   font-weight: 500;
 }
 
 .reception-section a:hover {
-  color: #1b5e20;
+  color: #4a0029;
   text-decoration: underline;
 }
 
@@ -116,7 +116,7 @@ body {
 }
 
 .locked-note {
-  background: #f1f8f4;
+  background: #f2e8f0;
   padding: 15px;
   border-radius: 8px;
   margin-top: 20px;
@@ -132,8 +132,8 @@ body {
 }
 
 .status-inline.yes {
-  color: #2e7d32;
-  background: #e8f5e9;
+  color: #66023C;
+  background: #f2e8f0;
 }
 
 .status-inline.maybe {
@@ -153,10 +153,14 @@ body {
 }
 
 .reception-title {
-  color: #2e7d32;
+  color: #66023C;
   font-size: 1.8rem;
   margin-bottom: 15px;
   font-weight: 600;
+}
+
+.dc-section .reception-title {
+  color: #66023C;
 }
 
 .reception-details {
@@ -166,11 +170,46 @@ body {
   margin-bottom: 25px;
   color: #424242;
   line-height: 1.8;
-  border-left: 4px solid #81c784;
+  border-left: 4px solid #a60c5e;
+}
+
+.dc-section .reception-details {
+  border-left-color: #a60c5e;
+  background: #faf5f8;
+}
+
+.dc-section .reception-details a {
+  color: #66023C;
+  font-weight: 600;
+}
+
+.dc-section .reception-details a:hover {
+  color: #4a0029;
+}
+
+.dc-section .form-group label {
+  color: #66023C;
+}
+
+.dc-section .form-group input,
+.dc-section .form-group select,
+.dc-section .form-group textarea {
+  border-color: #e6d4e0;
+}
+
+.dc-section .form-group input:focus,
+.dc-section .form-group select:focus,
+.dc-section .form-group textarea:focus {
+  border-color: #66023C;
+  box-shadow: 0 0 0 3px rgba(102, 2, 60, 0.1);
+}
+
+.dc-section .guest-subtitle {
+  color: #66023C;
 }
 
 .guest-subtitle {
-  color: #388e3c;
+  color: #66023C;
   font-size: 1.2rem;
   margin: 25px 0 15px 0;
   font-weight: 600;
@@ -183,7 +222,7 @@ body {
 .form-group label {
   display: block;
   margin-bottom: 8px;
-  color: #2e7d32;
+  color: #66023C;
   font-weight: 500;
   font-size: 0.95rem;
 }
@@ -193,7 +232,7 @@ body {
 .form-group textarea {
   width: 100%;
   padding: 12px 16px;
-  border: 2px solid #c8e6c9;
+  border: 2px solid #e6d4e0;
   border-radius: 8px;
   font-size: 1rem;
   font-family: inherit;
@@ -205,8 +244,8 @@ body {
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #4caf50;
-  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+  border-color: #66023C;
+  box-shadow: 0 0 0 3px rgba(102, 2, 60, 0.1);
 }
 
 .form-group textarea {
@@ -217,7 +256,7 @@ body {
 .btn-primary {
   width: 100%;
   padding: 16px;
-  background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+  background: linear-gradient(135deg, #66023C 0%, #4a0029 100%);
   color: white;
   border: none;
   border-radius: 12px;
@@ -225,13 +264,13 @@ body {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+  box-shadow: 0 4px 12px rgba(102, 2, 60, 0.3);
   margin-top: 20px;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+  box-shadow: 0 6px 16px rgba(102, 2, 60, 0.4);
 }
 
 .btn-primary:active {
@@ -241,8 +280,8 @@ body {
 .btn-secondary {
   padding: 12px 24px;
   background: white;
-  color: #4caf50;
-  border: 2px solid #4caf50;
+  color: #66023C;
+  border: 2px solid #66023C;
   border-radius: 8px;
   font-size: 1rem;
   font-weight: 600;
@@ -252,7 +291,7 @@ body {
 }
 
 .btn-secondary:hover {
-  background: #4caf50;
+  background: #66023C;
   color: white;
 }
 
@@ -269,7 +308,7 @@ body {
 }
 
 .confirmation-box h1 {
-  color: #2e7d32;
+  color: #66023C;
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
@@ -293,8 +332,8 @@ body {
 .spinner {
   width: 50px;
   height: 50px;
-  border: 4px solid #c8e6c9;
-  border-top-color: #4caf50;
+  border: 4px solid #e6d4e0;
+  border-top-color: #66023C;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin-bottom: 20px;
@@ -307,7 +346,7 @@ body {
 }
 
 .loading p {
-  color: #2e7d32;
+  color: #66023C;
   font-size: 1.1rem;
 }
 

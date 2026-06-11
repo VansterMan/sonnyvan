@@ -141,7 +141,7 @@ function App() {
             RSVP received!
           </p>
           <p className="confirmation-message">
-            <b>You will not receive an automatic confirmation email</b>, but the grooms will contact
+            <b>You will <i>not</i> receive an automatic confirmation email</b>, but the grooms will contact
             contact you separately with additional details as needed.
           </p>
           <p className="confirmation-message">
@@ -165,8 +165,7 @@ function App() {
 
       <div className="intro-text">
         <p>
-          We are having two wedding receptions in two cities (Atlanta and DC) and would love 
-          for you to join. Atlanta is done but there's still time to celebrate in DC! And, don't forget to check out <a href="/" target="_blank">our story</a>.
+          We are having two wedding receptions in two cities! Atlanta is done but we'd still love to see you in DC. And, don't forget to check out <a href="/" target="_blank">our story</a>.
         <p>
           &nbsp;
         </p>
@@ -181,14 +180,16 @@ function App() {
 
       <form onSubmit={handleSubmit} className="rsvp-form">
 
-
         {/* DC Reception */}
-        <section className="reception-section">
+        <section className="reception-section dc-section">
           <h2 className="reception-title">Washington, DC Reception</h2>
           <p className="reception-details">
-            <strong>Location:</strong> <a href="https://www.thedarcyhotel.com/">The Darcy</a> hotel at <a href="https://maps.app.goo.gl/e98gqW2JrHsY6ZC96">1515 Rhode Island Ave NW</a>, right on Scott Circle<br />
-            <strong>Date & Time:</strong> Sunday, August 2nd, 2026, 3:00-7:00 pm, with brief remarks around 5ish; we hope you can stay the whole time but feel free to come and go as your schedule allows<br />
-            <strong>Rooms:</strong> traveling from out of town (or just want to treat yourself and make it a fun evening)? The Darcy has generously extended a <a href="https://reservations.thedarcyhotel.com/?chain=13057&hotel=6338&Rate=D1">discounted booking link</a> for our party.
+            <strong>Location:</strong> <a href="https://www.thedarcyhotel.com">The Darcy</a> hotel, <a href="https://maps.app.goo.gl/f5euQXHiivejiYQy6">1515 Rhode Island Ave NW</a>, right on Scott Circle<br />
+            <strong>Date & Time:</strong> Sunday, August 2nd, 2026, 3-7pm, with brief remarks at 5ish; we hope you come for the whole time but feel free to come and go as your schedule allows<br />
+            <p>
+	       &nbsp;
+            </p>
+            <em>Additional details (dress, hotel info, etc.) are below the form.</em>
           </p>
 
           <div className="form-group">
@@ -272,30 +273,21 @@ function App() {
             </>
           )}
         </section>
-        {/* Atlanta Reception */}
-        <section className="reception-section">
-          <h2 className="reception-title">Atlanta Reception</h2>
-          
-          <div className="locked-message">
-            <p>
-              <strong>Atlanta on June 7th was a raging success! Look for pictures soon.</strong>
-            </p>
-          </div>
 
-          <p className="reception-details">
-            <strong>Location:</strong> <a href="https://www.buddybuddyatl.com" target="_blank" rel="noopener noreferrer">Buddy Buddy</a> in Midtown (<a href="https://maps.app.goo.gl/u4EpmSgEgsNvuDZv6" target="_blank" rel="noopener noreferrer">map</a>)<br />
-            <strong>Date & Time:</strong> Sunday, June 7th, 2026, 3:00-7:00pm
-          </p>
-
-        </section>
         {/* Additional Information */}
         <section className="reception-section">
           <h2 className="reception-title">Additional Information</h2>
           <p>
-            <b>Format:</b> This is an informal celebration with our friends. At both receptions we’ll have an open bar with heavy hors' d'oeuvres.
+            <b>Format:</b> This is a cocktail-style celebration with our friends. We’ll have an open bar with heavy hors' d'oeuvres. There will be a brief toast at around 5:00 but no formal ceremony.
           </p>
           <p>
-            <b>Dress:</b> Cocktail attire
+            <b>Dress:</b> Cocktail attire; think "DC Cocktail Party" but there's no strict dress code. Come in what makes you feel good.
+          </p>
+          <p>
+	    <b>RSVP:</b> Use your private URL to adjust your RSVP as needed. We request that you commit by July 3rd so we can lock down orders with the hotel.
+          </p>
+          <p>
+	   <b>Hotel Stays:</b> The Darcy has provided <a href="https://reservations.thedarcyhotel.com/?chain=13057&hotel=6338&Rate=D1">a room discount link</a> for guests traveling in (or locals who just want to take it easy and not worry about getting home after). Valet parking at the hotel is available for $35/night.
           </p>
           <p>
             <b>Kids:</b> This is a 21+ event. While we love kids, this isn’t a healthy environment for little ones.
