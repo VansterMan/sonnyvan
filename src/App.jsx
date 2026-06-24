@@ -184,7 +184,8 @@ function App() {
         <section className="reception-section dc-section">
           <h2 className="reception-title">Washington, DC Reception</h2>
           <p className="reception-details">
-            <strong>Location:</strong> <a href="https://www.thedarcyhotel.com">The Darcy</a> hotel, <a href="https://maps.app.goo.gl/f5euQXHiivejiYQy6">1515 Rhode Island Ave NW</a>, right on Scott Circle<br />
+            <strong>Location:</strong> <a href="https://www.thedarcyhotel.com">The Darcy</a> hotel, <a href="https://maps.app.goo.gl/f5euQXHiivejiYQy6">1515 Rhode Island Ave NW</a>, right on Scott Circle (<i>see details below for booking info if you want to stay</i>)<br />
+            <p>&nbsp;</p>
             <strong>Date & Time:</strong> Sunday, August 2nd, 2026, 3-7pm, with brief remarks at 5ish; we hope you come for the whole time but feel free to come and go as your schedule allows<br />
             <p>
 	       &nbsp;
@@ -278,22 +279,22 @@ function App() {
         <section className="reception-section">
           <h2 className="reception-title">Additional Information</h2>
           <p>
-            <b>Format:</b> This is a cocktail-style celebration with our friends. We’ll have an open bar with heavy hors' d'oeuvres. There will be a brief toast at around 5:00 but no formal ceremony.
+            <b>Format:</b> This is a cocktail-style celebration with our friends. We’ll have an open bar with heavy hors' d'oeuvres. There will be a brief toast at around 5:00 but no formal ceremony. There will be enough food and drink for you to come hungry and thirsty.
           </p>
           <p>
             <b>Dress:</b> Cocktail attire; think "DC Cocktail Party" but there's no strict dress code. Come in what makes you feel good.
           </p>
           <p>
-	    <b>RSVP:</b> Use your private URL to adjust your RSVP as needed. We request that you commit by July 3rd so we can lock down orders with the hotel.
+	    <b>RSVP:</b> Use your private URL to adjust your RSVP as needed. We request that you commit by July 10th so we can lock down food and beverage orders with the hotel.
           </p>
           <p>
-	   <b>Hotel Stays:</b> The Darcy has provided <a href="https://reservations.thedarcyhotel.com/?chain=13057&hotel=6338&Rate=D1">a room discount link</a> for guests traveling in (or locals who just want to take it easy and not worry about getting home after). Valet parking at the hotel is available for $35/night.
+	   <b>Hotel Stays:</b> If you are flying in (or if you’re a local and want to treat yourself to a great room and an easy night), <a href="https://www.thedarcyhotel.com/">The Darcy</a> has offered to take special care of us. Rather than book directly please email Nelsy at <a href="mailto:nelsy.marmol@thedarcyhotel.com">nelsy.marmol@thedarcyhotel.com</a> for your booking and a discount. The hotel also offers overnight valet for $60 or daily for $25.
           </p>
           <p>
             <b>Kids:</b> This is a 21+ event. While we love kids, this isn’t a healthy environment for little ones.
           </p>
           <p>
-            <b>Gifts:</b> Please, no gifts. Consider these amazing institutions instead: 
+            <b>Gifts:</b> <i>Please, no gifts</i>. Consider these amazing institutions instead: 
           <p>
             &nbsp;<a href="https://www.thetrevorproject.org/be-the-one/">The Trevor Project</a><br />
             &nbsp;<a href="https://donate.wikimedia.org/">Wikimedia Foundation</a>
