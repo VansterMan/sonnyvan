@@ -288,7 +288,10 @@ function App() {
 	    <b>RSVP:</b> Use your private URL to adjust your RSVP as needed. We request that you commit by July 10th so we can lock down food and beverage orders with the hotel.
           </p>
           <p>
-	   <b>Hotel Stays:</b> If you are flying in (or if you’re a local and want to treat yourself to a great room and an easy night), <a href="https://www.thedarcyhotel.com/">The Darcy</a> has offered to take special care of us. Rather than book directly please email Nelsy at <a href="mailto:nelsy.marmol@thedarcyhotel.com">nelsy.marmol@thedarcyhotel.com</a> for your booking and a discount (please reference Sonny & Van's reception in your email). The hotel also offers overnight valet for $60 or daily for $25.
+	   <b>Hotel Stays:</b> If you are flying in (or if you’re a local and want to treat yourself to a great room and an easy night), <a href="https://www.thedarcyhotel.com/">The Darcy</a> has offered to take special care of us. Rather than book directly please email Nelsy at <a href="mailto:nelsy.marmol@thedarcyhotel.com">nelsy.marmol@thedarcyhotel.com</a> for your booking and a discount (please reference Sonny & Van's reception in your email).
+	   <p>
+	   The hotel also offers overnight valet for $60 or daily for $25.
+	   </p>
           </p>
           <p>
             <b>Kids:</b> This is a 21+ event. While we love kids, this isn’t a healthy environment for little ones.
