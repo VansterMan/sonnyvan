@@ -186,7 +186,7 @@ function App() {
           <p className="reception-details">
             <strong>Location:</strong> <a href="https://www.thedarcyhotel.com">The Darcy</a> hotel, <a href="https://maps.app.goo.gl/f5euQXHiivejiYQy6">1515 Rhode Island Ave NW</a>, right on Scott Circle (<i>see details below for booking info if you want to stay</i>)<br />
             <p>&nbsp;</p>
-            <strong>Date & Time:</strong> Sunday, August 2nd, 2026, 3-7pm, with brief remarks at 5ish; we hope you come for the whole time but feel free to come and go as your schedule allows<br />
+            <strong>Date & Time:</strong> Sunday, August 2nd, 2026, 3-7pm, with brief remarks at 5ish; we hope you come for the whole time but feel free to come and go as your schedule allows. There is no formal ceremony.<br />
             <p>
 	       &nbsp;
             </p>
@@ -279,7 +279,7 @@ function App() {
         <section className="reception-section">
           <h2 className="reception-title">Additional Information</h2>
           <p>
-            <b>Format:</b> This is a cocktail-style celebration with our friends. We’ll have an open bar with heavy hors' d'oeuvres. There will be a brief toast at around 5:00 but no formal ceremony. There will be enough food and drink for you to come hungry and thirsty.
+            <b>Format:</b> This is a cocktail-style celebration with our friends. We’ll have an open bar with heavy hors' d'oeuvres. There will be a brief toast at around 5:00 but no formal ceremony. We encourage you to come hungry and thirsty.
           </p>
           <p>
             <b>Dress:</b> Cocktail attire; think "DC Cocktail Party" but there's no strict dress code. Come in what makes you feel good.
